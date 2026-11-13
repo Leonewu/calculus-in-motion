@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f4f2eb">
+  <meta name="description" content="拖动一条曲线，重新理解极限、导数、微分与积分。简短、可交互的微积分复习。">
+  <title>微积分，动起来看</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="masthead"><a href="#" class="brand" aria-label="返回开头"><span class="brand-mark">∫</span> 微积分，动起来看<span class="edition">一份交互笔记</span></a><a class="header-note" href="#applications">看看实际应用 ↗</a></header>
+  <main>
+    <section class="intro"><div class="eyebrow"><span></span> CALCULUS / A QUICK REVISIT</div><h1>变化，<em>看得见。</em></h1><p>从一辆车出发，把微积分重新串起来。<br class="mobile-break">每次只弄懂一件事。</p><div class="intro-formula"><span>今天只用一个例子</span><strong>s(t) = t²</strong><span>时间 t 秒 · 位置 s 米</span></div></section>
+    <nav class="chapters" aria-label="学习章节" role="tablist">
+      <button role="tab" id="tab-0" aria-controls="lesson" aria-selected="true" data-chapter="0"><span>01</span> 极限与导数</button>
+      <button role="tab" id="tab-1" aria-controls="lesson" aria-selected="false" data-chapter="1"><span>02</span> 微分</button>
+      <button role="tab" id="tab-2" aria-controls="lesson" aria-selected="false" data-chapter="2"><span>03</span> 积分</button>
+      <button role="tab" id="tab-3" aria-controls="lesson" aria-selected="false" data-chapter="3"><span>04</span> 串起来</button>
+    </nav>
+    <section class="lesson" id="lesson" role="tabpanel" aria-labelledby="tab-0">
+      <div class="explanation"><div class="chapter-label" id="chapter-label"></div><h2 id="lesson-title"></h2><p id="lesson-copy"></p><div class="formula" id="formula"></div><details class="derivation" id="derivation"><summary>这一步怎么推出来？</summary><div class="derivation-steps"><span>① 代入 s(t) = t²</span><code>[(t + h)² − t²] / h</code><span>② 展开平方，消去 t²</span><code>= (2th + h²) / h</code><span>③ h ≠ 0，约掉 h</span><code>= 2t + h</code><p>最后让 h → 0，得到 2t。<br>这是取极限，不是把分母直接代成 0。</p></div></details><p class="insight" id="insight"></p><div class="try-note"><span>↗</span><p id="try-copy"></p></div></div>
+      <div class="laboratory"><div class="graph-heading"><span id="graph-title"></span><span class="live-badge"><i></i> 交互图解</span></div>
+        <div class="graph-wrap"><svg id="graph" viewBox="0 0 640 340" role="img" aria-labelledby="graph-svg-title graph-svg-desc"><title id="graph-svg-title">位置与时间曲线</title><desc id="graph-svg-desc">使用下方滑块改变参数，图形和计算结果会同步更新。</desc></svg></div>
+        <div class="legend" id="legend"></div><div class="readouts" id="readouts" aria-live="off"></div><div class="controls" id="controls"></div>
+      </div>
+    </section>
+    <section class="check" aria-labelledby="check-title"><div class="check-prompt"><span class="eyebrow">10 秒自检</span><h3 id="check-title"></h3></div><div class="check-interaction"><div class="answers" id="answers"></div><p class="feedback" id="feedback" role="status"></p></div></section>
+    <div class="lesson-bottom"><button id="reset" class="text-button">↺ 重置这张图</button><button id="next" class="next-button">下一步：微分 <span>→</span></button></div>
+    <section class="applications" id="applications" aria-labelledby="applications-title">
+      <div class="applications-heading"><div><div class="eyebrow">PUT IT TO WORK</div><h2 id="applications-title">学了，能做什么？</h2></div><p>三个应用，每次看懂一个。</p></div>
+      <div class="application-tabs" role="tablist" aria-label="选择微积分应用">
+        <button role="tab" id="application-tab-0" aria-controls="application-panel" aria-selected="true" data-application="0"><span>01</span> 算刹车距离</button>
+        <button role="tab" id="application-tab-1" aria-controls="application-panel" aria-selected="false" data-application="1"><span>02</span> 看咖啡降温</button>
+        <button role="tab" id="application-tab-2" aria-controls="application-panel" aria-selected="false" data-application="2"><span>03</span> 理解 AI 训练</button>
+      </div>
+      <div id="application-panel" class="application-panel" role="tabpanel" aria-labelledby="application-tab-0">
+        <div class="application-copy"><span class="application-kind" id="application-kind"></span><h3 id="application-title"></h3><p id="application-copy"></p><div class="application-takeaway" id="application-takeaway"></div><p class="model-note" id="application-model"></p></div>
+        <div class="laboratory"><div class="graph-heading"><span id="application-graph-title"></span><span class="live-badge"><i></i> 动手试试</span></div><svg id="application-graph" viewBox="0 0 640 310" role="img" aria-label="应用图解，使用下方控件更新图形和数值"></svg><div class="readouts" id="application-readouts"></div><div class="controls" id="application-controls"></div></div>
+      </div>
+    </section>
+    <footer><span>导数看此刻，积分看累计。</span><span>基础例子：s(0) = 0，t ≥ 0。<br class="mobile-break">应用为简化模型；小数按显示位数取近似值。</span></footer>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>
