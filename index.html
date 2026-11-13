@@ -6,7 +6,7 @@
   <meta name="theme-color" content="#f4f2eb">
   <meta name="description" content="拖动一条曲线，重新理解极限、导数、微分与积分。简短、可交互的微积分复习。">
   <title>微积分，动起来看</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css?v=20261113c">
 </head>
 <body>
   <header class="masthead"><a href="#" class="brand" aria-label="返回开头"><span class="brand-mark">∫</span> 微积分，动起来看<span class="edition">一份交互笔记</span></a><a class="header-note" href="#applications">看看实际应用 ↗</a></header>
@@ -19,7 +19,7 @@
       <button role="tab" id="tab-3" aria-controls="lesson" aria-selected="false" data-chapter="3"><span>04</span> 串起来</button>
     </nav>
     <section class="lesson" id="lesson" role="tabpanel" aria-labelledby="tab-0">
-      <div class="explanation"><div class="chapter-label" id="chapter-label"></div><h2 id="lesson-title"></h2><p id="lesson-copy"></p><div class="formula" id="formula"></div><details class="derivation" id="derivation"><summary>这一步怎么推出来？</summary><div class="derivation-steps"><span>① 代入 s(t) = t²</span><code>[(t + h)² − t²] / h</code><span>② 展开平方，消去 t²</span><code>= (2th + h²) / h</code><span>③ h ≠ 0，约掉 h</span><code>= 2t + h</code><p>最后让 h → 0，得到 2t。<br>这是取极限，不是把分母直接代成 0。</p></div></details><details class="derivation" id="integral-derivation" hidden><summary>为什么积分会变成 T²？</summary><div class="derivation-steps"><span>① 反过来找原函数</span><code>(t²)′ = 2t</code><span>② 用微积分基本定理：上限减下限</span><code>∫₀ᵀ 2t dt = [t²]₀ᵀ</code><span>③ 分别代入 T 和 0</span><code>= T² − 0² = T²</code><p>[t²]₀ᵀ 是「代入上限，减去代入下限」。<br>T = 3 时，图上三角形的面积也是 ½ × 3 × 6 = 9。</p></div></details><p class="insight" id="insight"></p><div class="try-note"><span>↗</span><p id="try-copy"></p></div></div>
+      <div class="explanation"><div class="chapter-label" id="chapter-label"></div><h2 id="lesson-title"></h2><p id="lesson-copy"></p><div class="symbol-key" id="integral-meaning" hidden><p>这串符号，在问什么？</p><dl><dt>2t</dt><dd>当时的速度，单位：米/秒</dd><dt>dt</dt><dd>极短的一小段时间，单位：秒</dd><dt>2t dt</dt><dd>这一小段走过的距离，单位：米</dd><dt>∫₀ᵀ</dt><dd>把第 0 秒到第 T 秒的小段距离累加</dd></dl><strong>合起来：这段时间总共走了多远？</strong></div><div class="formula" id="formula"></div><details class="derivation" id="derivation"><summary>这一步怎么推出来？</summary><div class="derivation-steps"><span>① 代入 s(t) = t²</span><code>[(t + h)² − t²] / h</code><span>② 展开平方，消去 t²</span><code>= (2th + h²) / h</code><span>③ h ≠ 0，约掉 h</span><code>= 2t + h</code><p>最后让 h → 0，得到 2t。<br>这是取极限，不是把分母直接代成 0。</p></div></details><details class="derivation" id="integral-derivation" hidden><summary>为什么积分会变成 T²？</summary><div class="derivation-steps"><span>① 反过来找原函数</span><code>(t²)′ = 2t</code><span>② 用微积分基本定理：上限减下限</span><code>∫₀ᵀ 2t dt = [t²]₀ᵀ</code><span>③ 分别代入 T 和 0</span><code>= T² − 0² = T²</code><p>[t²]₀ᵀ 是「代入上限，减去代入下限」。<br>T = 3 时，图上三角形的面积也是 ½ × 3 × 6 = 9。</p></div></details><p class="insight" id="insight"></p><div class="try-note"><span>↗</span><p id="try-copy"></p></div></div>
       <div class="laboratory"><div class="graph-heading"><span id="graph-title"></span><span class="live-badge"><i></i> 交互图解</span></div>
         <div class="graph-wrap"><svg id="graph" viewBox="0 0 640 340" role="img" aria-labelledby="graph-svg-title graph-svg-desc"><title id="graph-svg-title">位置与时间曲线</title><desc id="graph-svg-desc">使用下方滑块改变参数，图形和计算结果会同步更新。</desc></svg></div>
         <div class="legend" id="legend"></div><div class="readouts" id="readouts" aria-live="off"></div><div class="controls" id="controls"></div>
@@ -41,6 +41,6 @@
     </section>
     <footer><span>导数看此刻，积分看累计。</span><span>基础例子：s(0) = 0，t ≥ 0。<br class="mobile-break">应用为简化模型；小数按显示位数取近似值。</span></footer>
   </main>
-  <script src="app.js"></script>
+  <script src="app.js?v=20261113c"></script>
 </body>
 </html>
